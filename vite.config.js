@@ -14,6 +14,9 @@ export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, __dirname)
     // console.log(env)
     return {
+        root: './',
+        base: './',
+        publicDir: 'public',
         plugins: [
             vue(),
             // 增加下面的配置项,这样在运行时就能检查eslint规范

@@ -6,4 +6,5 @@ div {
   color: red;
   /* 测试autoprefix是否生效 */
   backdrop-filter: saturate(180%) blur(20px);
+  user-select: auto;
 }
