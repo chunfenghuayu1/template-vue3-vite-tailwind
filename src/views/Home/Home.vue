@@ -5,9 +5,14 @@
 </template>
 
 <script setup>
-import { useHomeStore } from '../../store/Home'
+import { useHomeStore } from '@/store/Home.js'
 
 const homeStore = useHomeStore()
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+p {
+    color: black;
+    user-select: auto;
+}
+</style>

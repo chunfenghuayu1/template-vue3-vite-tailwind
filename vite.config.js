@@ -2,7 +2,8 @@ import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import eslintPlugin from 'vite-plugin-eslint' //导入包eslint
 import { resolve } from 'path'
-// 安装element plus按需导入
+
+// elementplus
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
@@ -12,15 +13,16 @@ import { createHtmlPlugin } from 'vite-plugin-html'
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, __dirname)
-    // console.log(env)
+    console.log(env)
     return {
+        // root: './',
+        // base: './',
         plugins: [
             vue(),
             // 增加下面的配置项,这样在运行时就能检查eslint规范
             eslintPlugin({
                 include: ['src/**/*.js', 'src/**/*.vue', 'src/*.js', 'src/*.vue']
             }),
-            // 组件库按需引入，无需额外配置
             AutoImport({
                 resolvers: [ElementPlusResolver()]
             }),
@@ -37,10 +39,6 @@ export default defineConfig(({ mode }) => {
                 }
             })
         ],
-        css: {
-            // 如果提供了该内联配置，Vite 将不会搜索其他 PostCSS 配置源。
-            postcss: './postcss.config.cjs'
-        },
         // 解决路径问题
         resolve: {
             alias: {

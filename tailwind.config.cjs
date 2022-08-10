@@ -1,12 +1,11 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-    // 控制css文件优化摇树
-    purge: {
-        // 是否开启摇树优化
-        enabled: false,
-        content: ['./src/**/*.html', './src/**/*.vue', './src/**/*.jsx']
-    },
+    mode: 'jit',
+    purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+    darkMode: false, // or 'media' or 'class'
     theme: {
+        extend: {}
+    },
+    variants: {
         extend: {}
     },
     plugins: []
